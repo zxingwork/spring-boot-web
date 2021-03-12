@@ -8,6 +8,7 @@ import org.zx.blog.Dao.UserDao;
 import org.zx.blog.Model.User;
 
 import java.util.List;
+import java.util.Set;
 
 /**
  * UserController
@@ -37,10 +38,18 @@ public class UserController {
         }
     }
     @RequestMapping(value = "/adduser")
-    public Object addUser(String name, String email){
+    public Object addUser(
+            String name,
+            int age,
+            String address,
+            String phone_num,
+            String email){
         User user  = new User();
         user.setID();
         user.setName(name);
+        user.setAge(age);
+        user.setAddress(address);
+        user.setPhoneNum(phone_num);
         user.setEmail(email);
         User resultUser = userDao.save(user);
         if (null==resultUser){
