@@ -1,5 +1,15 @@
 server:
   port: 8080
+  error:
+    path: /error
+  session:
+    timeout: 1800
+  context-path: /
+  tomcat:
+    uri-encoding: utf-8
+    max-threads: 500
+
+
 spring:
   datasource:
     url: jdbc:mysql://192.168.5.17:3306/admin?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone = GMT
@@ -13,3 +23,7 @@ spring:
     hibernate:
       ddl-auto: update
 
+my:
+  name:张兴
+  age:20
+  salary:12000
